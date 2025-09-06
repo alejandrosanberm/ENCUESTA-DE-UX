@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Retroalimentación UX - Airbnb México</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .airbnb-pink { color: #FF5A5F; }
+        .bg-airbnb-pink { background-color: #FF5A5F; }
+        .hover-airbnb-pink:hover { background-color: #E04E53; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen py-8">
+    <div class="max-w-4xl mx-auto px-4">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <div class="flex items-center justify-center mb-4">
+                <svg class="w-10 h-10 airbnb-pink mr-3" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <h1 class="text-3xl font-bold text-gray-800">Airbnb México</h1>
+            </div>
+            <h2 class="text-2xl font-semibold text-gray-700 mb-2">Formulario de Retroalimentación UX</h2>
+            <p class="text-gray-600">Tu opinión es fundamental para mejorar nuestra experiencia digital</p>
+        </div>
+
+        <!-- Formulario -->
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+            <form id="uxForm" action="#" method="POST">
+                <!-- Información Personal -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Información Personal</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF5A5F] focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF5A5F] focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="edad" class="block text-sm font-medium text-gray-700 mb-2">Edad</label>
+                            <select id="edad" name="edad" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF5A5F] focus:border-transparent">
+                                <option value="">Selecciona tu rango de edad</option>
+                                <option value="18-25">18-25 años</option>
+                                <option value="26-35">26-35 años</option>
+                                <option value="36-45">36-45 años</option>
+                                <option value="46-55">46-55 años</option>
+                                <option value="56+">56+ años</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="ocupacion" class="block text-sm font-medium text-gray-700 mb-2">Ocupación</label>
+                            <input type="text" id="ocupacion" name="ocupacion" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF5A5F] focus:border-transparent">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experiencia con la Landing Page -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Experiencia con la Landing Page</h3>
+                    
+                    <!-- Primera impresión -->
+                    <div class="mb-6">
+                        <label for="primera_impresion" class="block text-sm font-medium text-gray-700 mb-2">¿Cuál fue tu primera impresión de la landing page? *</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="primera_impresion" value="excelente" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="ml-2">Excelente - Me encantó inmediatamente</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="primera_impresion" value="buena" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="ml-2">Buena - Me gustó en general</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="primera_impresion" value="regular" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="ml-2">Regular - No me llamó mucho la atención</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="primera_impresion" value="mala" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="ml-2">Mala - No me gustó</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Facilidad de navegación -->
+                    <div class="mb-6">
+                        <label for="navegacion" class="block text-sm font-medium text-gray-700 mb-2">¿Qué tan fácil fue navegar por la página? *</label>
+                        <div class="flex space-x-4">
+                            <label class="flex flex-col items-center">
+                                <input type="radio" name="navegacion" value="1" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="text-sm mt-1">1 - Muy difícil</span>
+                            </label>
+                            <label class="flex flex-col items-center">
+                                <input type="radio" name="navegacion" value="2" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="text-sm mt-1">2 - Difícil</span>
+                            </label>
+                            <label class="flex flex-col items-center">
+                                <input type="radio" name="navegacion" value="3" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="text-sm mt-1">3 - Neutral</span>
+                            </label>
+                            <label class="flex flex-col items-center">
+                                <input type="radio" name="navegacion" value="4" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="text-sm mt-1">4 - Fácil</span>
+                            </label>
+                            <label class="flex flex-col items-center">
+                                <input type="radio" name="navegacion" value="5" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="text-sm mt-1">5 - Muy fácil</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Elementos más atractivos -->
+                    <div class="mb-6">
+                        <label for="elementos_atractivos" class="block text-sm font-medium text-gray-700 mb-2">¿Qué elementos de la página te resultaron más atractivos? (Selecciona todos los que apliquen)</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" name="elementos_atractivos" value="hero_section" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="ml-2">Sección principal con el mensaje "Descubre México"</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="elementos_atractivos" value="buscador" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="ml-2">Buscador de alojamientos</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="elementos_atractivos" value="destinos" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="ml-2">Secciones de destinos (Oaxaca y San Miguel)</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="elementos_atractivos" value="confianza" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="ml-2">Sección de confianza y garantías</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="elementos_atractivos" value="colores" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="ml-2">Colores y diseño visual</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="elementos_atractivos" value="contenido" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="ml-2">Contenido y textos en español</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Usabilidad y Funcionalidad -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Usabilidad y Funcionalidad</h3>
+                    
+                    <!-- Claridad del mensaje -->
+                    <div class="mb-6">
+                        <label for="claridad_mensaje" class="block text-sm font-medium text-gray-700 mb-2">¿Qué tan claro es el mensaje principal de la página? *</label>
+                        <div class="flex space-x-4">
+                            <label class="flex flex-col items-center">
+                                <input type="radio" name="claridad_mensaje" value="1" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="text-sm mt-1">1 - Nada claro</span>
+                            </label>
+                            <label class="flex flex-col items-center">
+                                <input type="radio" name="claridad_mensaje" value="2" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="text-sm mt-1">2 - Poco claro</span>
+                            </label>
+                            <label class="flex flex-col items-center">
+                                <input type="radio" name="claridad_mensaje" value="3" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="text-sm mt-1">3 - Neutral</span>
+                            </label>
+                            <label class="flex flex-col items-center">
+                                <input type="radio" name="claridad_mensaje" value="4" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="text-sm mt-1">4 - Claro</span>
+                            </label>
+                            <label class="flex flex-col items-center">
+                                <input type="radio" name="claridad_mensaje" value="5" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="text-sm mt-1">5 - Muy claro</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Probabilidad de uso -->
+                    <div class="mb-6">
+                        <label for="probabilidad_uso" class="block text-sm font-medium text-gray-700 mb-2">¿Qué tan probable es que uses esta plataforma para reservar alojamientos? *</label>
+                        <div class="flex space-x-4">
+                            <label class="flex flex-col items-center">
+                                <input type="radio" name="probabilidad_uso" value="1" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="text-sm mt-1">1 - Muy improbable</span>
+                            </label>
+                            <label class="flex flex-col items-center">
+                                <input type="radio" name="probabilidad_uso" value="2" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="text-sm mt-1">2 - Improbable</span>
+                            </label>
+                            <label class="flex flex-col items-center">
+                                <input type="radio" name="probabilidad_uso" value="3" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="text-sm mt-1">3 - Neutral</span>
+                            </label>
+                            <label class="flex flex-col items-center">
+                                <input type="radio" name="probabilidad_uso" value="4" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="text-sm mt-1">4 - Probable</span>
+                            </label>
+                            <label class="flex flex-col items-center">
+                                <input type="radio" name="probabilidad_uso" value="5" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="text-sm mt-1">5 - Muy probable</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Confianza -->
+                    <div class="mb-6">
+                        <label for="confianza" class="block text-sm font-medium text-gray-700 mb-2">¿La página te transmite confianza? *</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="confianza" value="si_mucha" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="ml-2">Sí, mucha confianza</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="confianza" value="si_algo" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="ml-2">Sí, algo de confianza</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="confianza" value="neutral" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="ml-2">Neutral</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="confianza" value="no_mucha" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="ml-2">No, no mucha confianza</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="confianza" value="no_nada" class="text-[#FF5A5F] focus:ring-[#FF5A5F]">
+                                <span class="ml-2">No, nada de confianza</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comentarios Abiertos -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Comentarios y Sugerencias</h3>
+                    
+                    <div class="mb-6">
+                        <label for="mejoras" class="block text-sm font-medium text-gray-700 mb-2">¿Qué mejorarías de la página?</label>
+                        <textarea id="mejoras" name="mejoras" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF5A5F] focus:border-transparent" placeholder="Comparte tus ideas para mejorar la experiencia..."></textarea>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="comentarios_adicionales" class="block text-sm font-medium text-gray-700 mb-2">Comentarios adicionales</label>
+                        <textarea id="comentarios_adicionales" name="comentarios_adicionales" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF5A5F] focus:border-transparent" placeholder="Cualquier otro comentario que quieras compartir..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Botón de envío -->
+                <div class="text-center">
+                    <button type="submit" class="bg-airbnb-pink hover-airbnb-pink text-white px-12 py-4 rounded-full text-lg font-semibold transition-colors">
+                        Enviar Retroalimentación
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Agradecimiento -->
+        <div class="text-center mt-8">
+            <p class="text-gray-600">¡Gracias por tu tiempo y retroalimentación! Tu opinión nos ayuda a crear mejores experiencias digitales.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('uxForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simular envío del formulario
+            const formData = new FormData(this);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                if (data[key]) {
+                    if (Array.isArray(data[key])) {
+                        data[key].push(value);
+                    } else {
+                        data[key] = [data[key], value];
+                    }
+                } else {
+                    data[key] = value;
+                }
+            }
+            
+            console.log('Datos del formulario:', data);
+            
+            // Mostrar mensaje de confirmación
+            alert('¡Gracias por tu retroalimentación! Tus respuestas han sido registradas exitosamente.');
+            
+            // En un entorno real, aquí se enviarían los datos a un servidor
+            // fetch('/submit-feedback', { method: 'POST', body: formData })
+        });
+    </script>
+</body>
+</html>
+
